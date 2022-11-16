@@ -10,7 +10,7 @@ string json = @"{'Age':25,'Name':'Elson Costa','Orders':[{'OrderPrice':9,'Shippi
 
 var entitys = JsonConvert.DeserializeObject<Customer>(json);
 
-var entitys = new Customer();
+// var entitys = new Customer();
 entitys.permissao = new Permissao();
 entitys.permissao.AbrirGaveta = true;
 entitys.permissao.CancelamentoCupom = true;
