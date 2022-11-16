@@ -6,9 +6,9 @@ using TesteJonB.Models;
 
 Console.WriteLine("Hello, World!");
 
-// string json = @"{'Age':25,'Name':'Elson Costa','Orders':[{'OrderPrice':9,'ShippingAddress':'Someaddress1'},{'OrderPrice':23,'ShippingAddress':'Someaddress2'}]}";
+string json = @"{'Age':25,'Name':'Elson Costa','Orders':[{'OrderPrice':9,'ShippingAddress':'Someaddress1'},{'OrderPrice':23,'ShippingAddress':'Someaddress2'}]}";
 
-// var entitys = JsonConvert.DeserializeObject<Customer>(json);
+var entitys = JsonConvert.DeserializeObject<Customer>(json);
 
 var entitys = new Customer();
 entitys.permissao = new Permissao();

@@ -9,7 +9,7 @@ namespace TesteJonB
         public DbSet<SomeEntity> SomeEntities { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseNpgsql(@"Host=localhost;Username=postgres;Password=123123;Database=mydatabase");
+        => optionsBuilder.UseNpgsql(@"Host=localhost:5432;Username=postgres;Password=123123;Database=mydatabase");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
