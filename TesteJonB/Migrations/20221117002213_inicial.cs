@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TesteJonB.Models;
 
@@ -6,10 +7,8 @@ using TesteJonB.Models;
 
 namespace TesteJonB.Migrations
 {
-    /// <inheritdoc />
-    public partial class initialcreate : Migration
+    public partial class inicial : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -18,6 +17,12 @@ namespace TesteJonB.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    DataCadastro = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    DataAlterado = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    DataTeste = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    DataTeste2 = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    DataAutomatico = table.Column<DateTime>(type: "timestamp without time zone", nullable: false, defaultValueSql: "now()"),
+                    DataAutomaticoUtc = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "now()"),
                     Customer = table.Column<Customer>(type: "jsonb", nullable: false)
                 },
                 constraints: table =>
@@ -26,7 +31,6 @@ namespace TesteJonB.Migrations
                 });
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
